@@ -11,6 +11,7 @@ import org.apache.commons.io.FilenameUtils;
 /**
  *
  * @author hcadavid
+ * 
  */
 
 
@@ -20,9 +21,10 @@ public class DataProcessor{
         
         LOG.info("Loading data...");
         
-        
+        /**
         if (extension(fileName).equals("xml")){
-            processXML(fileName);                
+            processXML(fileName);   
+            
         }
         else if (extension(fileName).equals("csv")){
             processCSV(fileName);                
@@ -36,6 +38,10 @@ public class DataProcessor{
         else{
             throw new DataLoadException("Format not supported:"+extension(fileName));
         }
+        */
+        Tipos tipo = new Tipos();
+        String e= extension(fileName);
+        tipo.nextFormato(e);
         
         /*
             DATA PROCESSING CORE
@@ -50,21 +56,13 @@ public class DataProcessor{
     
     private static final Logger LOG = Logger.getLogger(DataProcessor.class.getName());
     
-    private void processCSV(String fileName) {
-        LOG.info("Processing CVS...");
-    }
+  
 
-    private void processJSON(String fileName) {
-        LOG.info("Processing JSON file...");
-    }
+  
 
-    private void processXML(String fileName) {
-        LOG.info("Processing XML...");
-    }
+    
 
-    private void processTXT(String fileName) {
-        LOG.info("Processing TXT...");
-    }
+   
 
 }
 
